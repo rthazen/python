@@ -18,10 +18,9 @@ def GenerateGuess(s,e):
    return (randint(1, 100))  #if the above does not return, it means one of the if's failed. In that case create a random number between 1 and 100
 
 def CheckGuess(userGuess, secretGuess):
-    print('userGuess is', userGuess)
-    print('secretGuess is', secretGuess)
     if (userGuess == secretGuess):
         return 10
+    # check whether the difference between the numbers is 5 or less
     elif ((((userGuess - secretGuess) <= 5) and ((userGuess - secretGuess) > 0)) or (((secretGuess - userGuess) <= 5) and ((secretGuess - userGuess) > 0))):
         return 5
     else:
@@ -29,7 +28,7 @@ def CheckGuess(userGuess, secretGuess):
 
 def UpdatePoints(points):
     global TotalPoints
-    
+    #take existing TotalPoints value and add points value to it
     TotalPoints = TotalPoints + points
     return TotalPoints
 
